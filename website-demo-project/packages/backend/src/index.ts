@@ -7,7 +7,6 @@ import { ControllerGetByIdUser } from "./controllers/get-user-by-id/Controller";
 import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
-
 //===================================================================
 //                          DEFAULT SETTINGS
 //===================================================================
@@ -42,3 +41,4 @@ app.get("/get-all-users", ControllerGetAllUser);
 app.delete("/delete-user", ControllerDeleteUser);
 app.post("/update-user", ControllerUpdateUser);
 app.get("/find-user", ControllerGetByIdUser);
+

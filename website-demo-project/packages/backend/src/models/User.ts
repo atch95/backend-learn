@@ -1,6 +1,6 @@
 import { Schema, model, connect } from "mongoose";
 
-export interface userInput {
+export interface UserType {
   username: string;
   password: string;
   name: string;
@@ -9,9 +9,11 @@ export interface userInput {
   email: string;
   profilePicture: string;
   birthDate: Date;
+  deleted:boolean;
+  
 }
 
-export const userSchema = new Schema<userInput>({
+export const userSchema = new Schema<UserType>({
   username: { type: String, required: true },
   name: { type: String, required: true },
   password: { type: String, required: true },
@@ -20,6 +22,7 @@ export const userSchema = new Schema<userInput>({
   email: { type: String, required: true },
   profilePicture: { type: String, required: true },
   birthDate: { type: Date, required: true },
+  deleted:{type: Boolean, required: true}
 });
 
-export const User = model<userInput>("User", userSchema);
+export const User = model<UserType>("User", userSchema);
